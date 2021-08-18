@@ -14,7 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('/statuses', [StatusesController::class, 'store'])->name('statuses.store')->middleware('auth');
 
+Route::view('/', 'welcome');
+
+Route::post('/statuses', [StatusesController::class, 'store'])
+    ->name('statuses.store')->middleware('auth');
 
 Route::get('/login')->name('login');
+
